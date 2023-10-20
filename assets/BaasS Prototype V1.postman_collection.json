@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "23e0a6c9-2097-4811-a1d0-a849eb9ffd79",
+		"name": "BaasS Prototype V1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30103221"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "/user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accountOnboardingType\": \"BANKACCOUNT\",\r\n  \"documentNumber\": \"9876543210\",\r\n  \"phoneNumber\": \"+9876543210\",\r\n  \"email\": \"jane.doe@example.com\",\r\n  \"motherName\": \"Mary Doe\",\r\n  \"fullName\": \"Jane Doe\",\r\n  \"socialName\": \"Joey\",\r\n  \"birthDate\": \"02-02-1985\",\r\n  \"address\": {\r\n    \"postalCode\": \"54321\",\r\n    \"street\": \"456 Elm Street\",\r\n    \"number\": \"1010\",\r\n    \"addressComplement\": \"Unit 202\",\r\n    \"neighborhood\": \"New Neighborhood\",\r\n    \"city\": \"New City\",\r\n    \"state\": \"NS\",\r\n    \"longitude\": \"23.4567\",\r\n    \"latitude\": \"45.6789\"\r\n  },\r\n  \"isPoliticallyExposedPerson\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/user (second-user)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accountOnboardingType\": \"BANKACCOUNT\",\r\n  \"documentNumber\": \"12345678901\",\r\n  \"phoneNumber\": \"+1234567890\",\r\n  \"email\": \"john.doe@example.com\",\r\n  \"motherName\": \"Jane Doe\",\r\n  \"fullName\": \"John Doe\",\r\n  \"socialName\": \"\",\r\n  \"birthDate\": \"01-01-1990\",\r\n  \"address\": {\r\n    \"postalCode\": \"12345\",\r\n    \"street\": \"123 Main Street\",\r\n    \"number\": \"789\",\r\n    \"addressComplement\": \"Apt 101\",\r\n    \"neighborhood\": \"Sample Neighborhood\",\r\n    \"city\": \"Sample City\",\r\n    \"state\": \"ST\",\r\n    \"longitude\": \"-12.3456\",\r\n    \"latitude\": \"34.5678\"\r\n  },\r\n  \"isPoliticallyExposedPerson\": false\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/user/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accountOnboardingType\": \"BANKACCOUNT\",\r\n  \"documentNumber\": \"12345678901\",\r\n  \"phoneNumber\": \"+1234567890\",\r\n  \"email\": \"john.doe@example.com\",\r\n  \"motherName\": \"Jane Doe\",\r\n  \"fullName\": \"John Doe\",\r\n  \"socialName\": \"\",\r\n  \"birthDate\": \"01-01-1990\",\r\n  \"address\": {\r\n    \"postalCode\": \"12345\",\r\n    \"street\": \"123 Main Street\",\r\n    \"number\": \"789\",\r\n    \"addressComplement\": \"Apt 101\",\r\n    \"neighborhood\": \"Sample Neighborhood\",\r\n    \"city\": \"Sample City\",\r\n    \"state\": \"ST\",\r\n    \"longitude\": \"-12.3456\",\r\n    \"latitude\": \"34.5678\"\r\n  },\r\n  \"isPoliticallyExposedPerson\": true // Alterado\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/65329b0e0d0cbaaf99f577e4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"65329b0e0d0cbaaf99f577e4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/user/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/65329b0e0d0cbaaf99f577e4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"65329b0e0d0cbaaf99f577e4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/user/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/65329b0e0d0cbaaf99f577e4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"65329b0e0d0cbaaf99f577e4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "/account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user\": \"65301b227a0f6833a0e825f4\",\r\n  \"category\": \"CONTA_CORRENTE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/account",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"account"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "transaction",
+			"item": [
+				{
+					"name": "/transaction/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/transaction/65302779884bb7478f90b591",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transaction",
+								"65302779884bb7478f90b591"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/transaction (deposit)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"account\": \"653006278d665113b2d55310\",\r\n    \"type\": \"DEPOSIT\",\r\n    \"amount\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/transaction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/transaction (withdraw)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"account\": \"653006278d665113b2d55310\",\r\n    \"type\": \"WITHDRAW\",\r\n    \"amount\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/transaction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pix",
+			"item": [
+				{
+					"name": "/pix",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"account\": \"65302765884bb7478f90b58d\",\r\n    \"key\": \"71b614ca-37c2-49bb-bb49-2345f3daa407\",\r\n    \"amount\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pix",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pix"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

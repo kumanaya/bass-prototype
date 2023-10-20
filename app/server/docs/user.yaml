@@ -1,0 +1,121 @@
+paths:
+  /user/{id}:
+    get:
+      summary: "Obter usuário por ID"
+      tags:
+        - User
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: "ID do usuário a ser obtido"
+      responses:
+        200:
+          description: "Operação bem-sucedida"
+          schema:
+            $ref: "#/definitions/User"
+  /user:
+    post:
+      summary: "Criar um novo usuário"
+      tags:
+        - User
+      parameters:
+        - name: user
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/User"
+      responses:
+        200:
+          description: "Operação bem-sucedida"
+          schema:
+            $ref: "#/definitions/User"
+    put:
+      summary: "Atualizar usuário por ID"
+      tags:
+        - User
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: "ID do usuário a ser atualizado"
+        - name: user
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/User"
+      responses:
+        200:
+          description: "Operação bem-sucedida"
+          schema:
+            $ref: "#/definitions/User"
+    delete:
+      summary: "Excluir usuário por ID"
+      tags:
+        - User
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: "ID do usuário a ser excluído"
+      responses:
+        200:
+          description: "Operação bem-sucedida"
+          schema:
+            $ref: "#/definitions/Response"
+definitions:
+  User:
+    type: "object"
+    properties:
+      accountOnboardingType:
+        type: "string"
+        description: "Tipo da conta (BANKACCOUNT)"
+      documentNumber:
+        type: "string"
+      phoneNumber:
+        type: "string"
+      email:
+        type: "string"
+      motherName:
+        type: "string"
+      fullName:
+        type: "string"
+      socialName:
+        type: "string"
+      birthDate:
+        type: "string"
+      address:
+        $ref: "#/definitions/Address"
+      isPoliticallyExposedPerson:
+        type: "boolean"
+  Address:
+    type: "object"
+    properties:
+      postalCode:
+        type: "string"
+      street:
+        type: "string"
+      number:
+        type: "string"
+      addressComplement:
+        type: "string"
+      neighborhood:
+        type: "string"
+      city:
+        type: "string"
+      state:
+        type: "string"
+      longitude:
+        type: "string"
+      latitude:
+        type: "string"
+  Response:
+    type: "object"
+    properties:
+      statusCode:
+        type: "string"
+      message:
+        type: "string"

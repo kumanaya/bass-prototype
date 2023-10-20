@@ -1,0 +1,39 @@
+paths:
+  /pix:
+    post:
+      summary: "Realizar uma transferência Pix"
+      tags:
+        - Pix
+      parameters:
+        - name: pixTransfer
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/PixTransferData"
+      responses:
+        200:
+          description: "Operação bem-sucedida"
+          schema:
+            $ref: "#/definitions/PixTransferResponse"
+definitions:
+  PixTransferData:
+    type: "object"
+    properties:
+      account:
+        type: "string"
+        description: "ID da conta de origem"
+      key:
+        type: "string"
+        description: "Chave Pix do destinatário"
+      amount:
+        type: "number"
+        description: "Valor da transferência Pix"
+  PixTransferResponse:
+    type: "object"
+    properties:
+      statusCode:
+        type: "string"
+        description: "Código de status da resposta"
+      message:
+        type: "string"
+        description: "Mensagem da resposta"

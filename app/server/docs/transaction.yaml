@@ -1,0 +1,62 @@
+paths:
+  /transaction/{id}:
+    get:
+      summary: "Obter uma transação por ID"
+      tags:
+        - Transaction
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: "ID da transação a ser obtido"
+      responses:
+        200:
+          description: "Operação bem-sucedida"
+          schema:
+            $ref: "#/definitions/TransactionResponse"
+  /transaction:
+    post:
+      summary: "Realizar uma nova transação"
+      tags:
+        - Transaction
+      parameters:
+        - name: transaction
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/TransactionData"
+      responses:
+        200:
+          description: "Operação bem-sucedida"
+          schema:
+            $ref: "#/definitions/TransactionResponse"
+definitions:
+  TransactionData:
+    type: "object"
+    properties:
+      account:
+        type: "string"
+        description: "ID da conta associada à transação"
+      type:
+        type: "string"
+        description: "Tipo de transação (WITHDRAW ou DEPOSIT)"
+      amount:
+        type: "number"
+        description: "Valor da transação"
+  TransactionResponse:
+    type: "object"
+    properties:
+      account:
+        type: "string"
+        description: "ID da conta associada à transação"
+      type:
+        type: "string"
+        description: "Tipo de transação (WITHDRAW ou DEPOSIT)"
+      amount:
+        type: "number"
+        description: "Valor da transação"
+      timestamp:
+        type: "string"
+        format: "date-time"
+        description: "Data e hora da transação"
