@@ -109,7 +109,7 @@ cd bass-prototype
 3.  **Instale as dependências:**
 
 ```bash
-npm install
+cd app/server && npm install
 ```
 
 <!-- Como Configurar -->
