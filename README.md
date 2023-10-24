@@ -1,4 +1,4 @@
-![Cover](https://github.com/kumanaya/baas-prototype/blob/master/assets/cover.png)
+![Cover](https://github.com/kumanaya/bass-prototype/blob/main/assets/cover.png)
 
 <!-- Título do Projeto -->
 
@@ -109,7 +109,7 @@ cd bass-prototype
 3.  **Instale as dependências:**
 
 ```bash
-npm install
+cd app/server && npm install
 ```
 
 <!-- Como Configurar -->
